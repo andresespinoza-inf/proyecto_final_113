@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princeton-Plainsboro - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --hospital-blue: #005b96;
+            --hospital-light: #e6f2ff;
+        }
+
+        body {
+            background: url('https://example.com/hospital-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .hospital-card {
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+
+        .hospital-header {
+            background: var(--hospital-blue);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+        }
+
+        .hospital-logo {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .btn-hospital {
+            background: var(--hospital-blue);
+            color: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--hospital-blue);
+            box-shadow: 0 0 0 0.25rem rgba(0, 91, 150, 0.25);
+        }
+    </style>
+</head>
+
+<body class="d-flex align-items-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card hospital-card">
+                    <div class="card-header text-white py-3" style="background-color: var(--hospital-blue)">
+                        <div class="d-flex justify-content-center align-items-center mb-3">
+                            <i class="fas fa-hospital fa-3x me-3"></i> <!-- Ícono grande -->
+                            <div class="text-start">
+                                <h3 class="mb-0">PRINCETON-PLAINSBORO</h3>
+                                <p class="mb-0">Teaching Hospital</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="nav nav-tabs nav-justified mb-4" id="authTabs">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="login-tab" data-bs-toggle="tab"
+                                    data-bs-target="#login">INICIAR SESIÓN</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="register-tab" data-bs-toggle="tab"
+                                    data-bs-target="#register">REGISTRARSE</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <!-- Login -->
+                            <div class="tab-pane fade show active" id="login">
+                                <form id="loginForm">
+                                    <div class="mb-3">
+                                        <label for="loginEmail" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="loginEmail" required>
+                                        <div class="invalid-feedback">Ingrese un correo válido.</div>
+                                    </div>
+                                    <div class="mb-3 position-relative">
+                                        <label for="loginPassword" class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" id="loginPassword" required>
+                                        <button type="button"
+                                            class="btn btn-link position-absolute end-0 top-50 translate-middle-y pe-3"
+                                            id="toggleLoginPassword">
+                                        </button>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Recordar contraseña</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-hospital w-100 py-2 mb-3">
+                                        <i class="fas fa-sign-in-alt me-2"></i> INGRESAR
+                                    </button>
+                                    <div class="text-center">
+                                        <a href="#!" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Registro -->
+                            <div class="tab-pane fade" id="register">
+                                <form id="registerForm">
+                                    <div class="mb-3">
+                                        <label for="registerEmail" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="registerEmail" required placeholder="Ej: usuario@dominio.com">
+                                        <div class="invalid-feedback">Ingrese un correo válido.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" id="registerPassword" required placeholder="Al menos 8 caracteres, una mayuscula, un numero y un símbolo">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                                        <input type="password" class="form-control" id="confirmPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-hospital w-100 py-2">
+                                        <i class="fas fa-user-plus me-2"></i> REGISTRARSE
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

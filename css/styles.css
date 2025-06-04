@@ -1,0 +1,121 @@
+:root {
+    --hospital-blue: #0066cc; /* Color exacto de tu botón (ajusta si es diferente) */
+    --hospital-dark: #004080; /* Versión oscura para hover/contraste */
+}
+
+
+/* Ajustes adicionales a Bootstrap */
+.table-danger {
+    background-color: #ffcccc;
+}
+.table-warning {
+    background-color: #fff3cd;
+}
+.table-info {
+    background-color: #cff4fc;
+}
+.table-success {
+    background-color: #d1e7dd;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Efectos premium */
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 102, 204, 0.05);
+}
+.badge {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.card-hospital {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+/* Estilo para ticket térmico */
+#ticketTermico {
+    width: 80mm; /* Ancho estándar para impresoras térmicas */
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px dashed #ccc;
+    background: white;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #ticketTermico, #ticketTermico * {
+        visibility: visible;
+    }
+    #ticketTermico {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+    }
+}
+
+/* Estilo para el ticket */
+#ticketContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para impresión */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #ticketContainer, #ticketContainer * {
+        visibility: visible;
+    }
+    #ticketContainer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
+
+.hospital-header {
+    border-radius: 10px 10px 0 0 !important;
+    background: linear-gradient(135deg, #003366 0%, #0066cc 100%) !important;
+}
+
+/* Botón de ver contraseña */
+#toggleLoginPassword {
+    color: var(--hospital-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    z-index: 5;
+}
+#toggleLoginPassword:hover {
+    color: var(--hospital-dark);
+}
